@@ -1,0 +1,75 @@
+# Maintainer: silentnoodle
+pkgname='wine-staging-tkg'
+pkgver=7.15.r0.g552b03f7
+pkgrel=1
+pkgdesc='wine staging with TkG'
+arch=('x86_64')
+url='https://github.com/jc141x/wine-tkg-git'
+license=('LGPL')
+provides=("wine=${pkgver}" "wine-staging=${pkgver}" "wine-wow64=${pkgver}" "wine-esync=${pkgver}")
+conflicts=('wine' 'wine-wow64' 'wine-staging' 'wine-esync')
+depends=(attr lib32-attr fontconfig lib32-fontconfig lcms2 lib32-lcms2 libxml2
+    lib32-libxml2 libxcursor lib32-libxcursor libxrandr lib32-libxrandr
+    libxdamage lib32-libxdamage libxi lib32-libxi gettext lib32-gettext
+    freetype2 lib32-freetype2 glu lib32-glu libsm lib32-libsm gcc-libs
+    lib32-gcc-libs libpcap lib32-libpcap faudio lib32-faudio
+    desktop-file-utils jxrlib)
+optdepends=(giflib
+    lib32-giflib
+    libpng
+    lib32-libpng
+    libldap
+    lib32-libldap
+    gnutls
+    lib32-gnutls
+    mpg123
+    lib32-mpg123
+    openal
+    lib32-openal
+    v4l-utils
+    lib32-v4l-utils
+    libpulse
+    lib32-libpulse
+    alsa-plugins
+    lib32-alsa-plugins
+    alsa-lib
+    lib32-alsa-lib
+    libjpeg-turbo
+    lib32-libjpeg-turbo
+    libxcomposite
+    lib32-libxcomposite
+    libxinerama
+    lib32-libxinerama
+    ncurses
+    lib32-ncurses
+    libxslt
+    lib32-libxslt
+    libva
+    lib32-libva
+    gtk3
+    lib32-gtk3
+    gst-plugins-base-libs
+    lib32-gst-plugins-base-libs
+    vulkan-icd-loader
+    lib32-vulkan-icd-loader
+    sdl2
+    lib32-sdl2
+    cups
+    zapcc
+    samba
+    clang
+    dosbox
+    ccache
+    faudio
+    lib32-faudio
+    schedtool)
+makedepends=()
+source=(
+    "wine-tkg-${pkgver}.tar.lzma::https://github.com/jc141x/wine-tkg-git/releases/download/${pkgver}/wine-tkg.tar.lzma"
+)
+sha256sums=('f6df70f8b5f5f26aa9ed67c0b2e26386fbfe396fd2d7b644704cfc3b72ba3445')
+
+package() {
+    install -d $pkgdir/usr/{bin,lib,lib32,share,include}
+    cp -r "${srcdir}/wine/"* $pkgdir/usr/
+}

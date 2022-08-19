@@ -1,0 +1,24 @@
+# Maintainer: silentnoodle
+# Contributor: Adrià Cereto i Massagué <ssorgatem@gmail.com>
+# Contributor: Jonas Van der Aa <ketsukonn@gmail.com>
+
+pkgname=('jc141-bash')
+pkgver=1.0
+pkgrel=2
+pkgdesc=""
+url="https://github.com/jc141x/jc141-bash"
+license=('GPL-3')
+arch=('x86_64')
+conflicts=("rumtricks")
+depends=('vulkan-icd-loader')
+source=("wha.sh-${pkgver}::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/wha.sh"
+        "vulkan.sh-${pkgver}::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/vulkan.sh"
+)
+sha256sums=('c3be4575f4eb48068c88f61c5dc957e617874519f17dd0a757762494e61baf7e'
+            'be8173df67b16675adebf82eafc49095b136c50971e2f67800b81c333e9d5145')
+
+package() {
+        cd $srcdir
+        install -Dm755 "wha.sh-${pkgver}" "$pkgdir/opt/jc141-bash/wha.sh"
+        install -Dm755 "vulkan.sh-${pkgver}" "$pkgdir/opt/jc141-bash/vulkan.sh"
+}

@@ -1,0 +1,39 @@
+# Maintainer: silentnoodle
+# Contributor: Adrià Cereto i Massagué <ssorgatem@gmail.com>
+# Contributor: Jonas Van der Aa <ketsukonn@gmail.com>
+
+pkgbase=vkd3d-proton-bin
+pkgname=('vkd3d-proton-bin')
+_pkgver=2.6
+_pkgbuildver=8.10
+pkgver="${_pkgver}.${_pkgbuildver}"
+pkgrel=1
+pkgdesc="A Vulkan-based compatibility layer for Direct3D 9/10/11 which allows running 3D applications on Linux using Wine (Windows DLL binary files)"
+url="https://github.com/doitsujin/dxvk"
+license=('LGPL')
+arch=('x86_64')
+provides=("vkd3d-proton")
+conflicts=("vkd3d-proton")
+options=(!strip)
+depends=('vulkan-icd-loader')
+optdepends=('lib32-vulkan-icd-loader: 32-bit Windows application support')
+source=("vkd3d-proton-${pkgver}.tar.zst::https://github.com/jc141x/vkd3d-proton/releases/download/v${_pkgver}-${_pkgbuildver}/vkd3d-proton-${_pkgver}.tar.zst"
+)
+noextract=("vkd3d-proton-${pkgver}.tar.zst")
+sha256sums=('5d0ffc590664cba9ee9a4347ca018cb90ad229acf342c5dd1f759be4359687b9')
+
+prepare() {
+        # for unknown reason makepkg would not extract the tar only zst
+        cd $srcdir
+        echo "Extracting with tar"
+        tar -xf "vkd3d-proton-${pkgver}.tar.zst"
+}
+
+package() {
+        cd $srcdir
+        install -D "vkd3d-proton-$_pkgver"/x86/d3d12.dll -t "$pkgdir/usr/share/vkd3d-proton/x86"
+        install -D "vkd3d-proton-$_pkgver"/x64/d3d12.dll -t "$pkgdir/usr/share/vkd3d-proton/x64"
+        install "vkd3d-proton-$_pkgver"/setup_vkd3d_proton.sh -t "$pkgdir/usr/share/vkd3d-proton/"
+        install -d "$pkgdir/usr/bin"
+        ln -s /usr/share/vkd3d-proton/setup_vkd3d_proton.sh "$pkgdir/usr/bin/setup_vkd3d_proton"
+}

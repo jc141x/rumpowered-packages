@@ -1,0 +1,31 @@
+# Maintainer: silentnoodle
+# Contributor: Adrià Cereto i Massagué <ssorgatem@gmail.com>
+# Contributor: Jonas Van der Aa <ketsukonn@gmail.com>
+
+pkgbase=dxvk-bin
+pkgname=('dxvk-bin')
+_pkgver=1.10.3
+_pkgbuildver=8.14
+pkgver="${_pkgver}.${_pkgbuildver}"
+pkgrel=1
+pkgdesc="A Vulkan-based compatibility layer for Direct3D 9/10/11 which allows running 3D applications on Linux using Wine (Windows DLL binary files)"
+url="https://github.com/doitsujin/dxvk"
+license=('zlib/libpng')
+arch=('x86_64')
+provides=("dxvk" "d9vk" "dxvk=$_pkgver")
+conflicts=("dxvk" "d9vk")
+options=(!strip)
+depends=('vulkan-icd-loader')
+optdepends=('lib32-vulkan-icd-loader: 32-bit Windows application support')
+source=("dxvk-${pkgver}.tar.gz::https://github.com/jc141x/dxvk/releases/download/v${_pkgver}-${_pkgbuildver}/dxvk-${_pkgver}.tar.gz"
+)
+sha256sums=('3a0496255355ff53e65f1b184fb062fbd70a93bd8f187c45c8d487393698fd49')
+
+package() {
+        cd $srcdir
+        install -D "dxvk-$_pkgver"/x32/* -t "$pkgdir/usr/share/dxvk/x32"
+        install -D "dxvk-$_pkgver"/x64/* -t "$pkgdir/usr/share/dxvk/x64"
+        install "dxvk-$_pkgver"/setup_dxvk.sh -t "$pkgdir/usr/share/dxvk/"
+        install -d "$pkgdir/usr/bin"
+        ln -s /usr/share/dxvk/setup_dxvk.sh "$pkgdir/usr/bin/setup_dxvk"
+}
