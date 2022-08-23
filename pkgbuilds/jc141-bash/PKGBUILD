@@ -4,21 +4,25 @@
 
 pkgname=('jc141-bash')
 pkgver=1.0
-pkgrel=2
+pkgrel=3
 pkgdesc=""
 url="https://github.com/jc141x/jc141-bash"
 license=('GPL-3')
 arch=('x86_64')
 conflicts=("rumtricks")
 depends=('vulkan-icd-loader')
-source=("wha.sh-${pkgver}::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/wha.sh"
-        "vulkan.sh-${pkgver}::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/vulkan.sh"
+source=("wha.sh-${pkgver}-${pkgrel}::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/wha.sh"
+        "vulkan.sh-${pkgver}-${pkgrel}::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/vulkan.sh"
+        "logo.txt.gz-${pkgver}-${pkgrel}::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/logo.txt.gz"
 )
+noextract=("logo.txt.gz-${pkgver}-${pkgrel}")
 sha256sums=('c3be4575f4eb48068c88f61c5dc957e617874519f17dd0a757762494e61baf7e'
-            'be8173df67b16675adebf82eafc49095b136c50971e2f67800b81c333e9d5145')
+            '59987a48771756f8de595a51b6dca8c46137d648563c7656f66f441bb8efdd1d'
+            'a5fa3e8444ee85368bf35f765ced459d71540c4818a116b234ef9644e5ffcbdd')
 
 package() {
         cd $srcdir
-        install -Dm755 "wha.sh-${pkgver}" "$pkgdir/opt/jc141-bash/wha.sh"
-        install -Dm755 "vulkan.sh-${pkgver}" "$pkgdir/opt/jc141-bash/vulkan.sh"
+        install -Dm755 "wha.sh-${pkgver}-${pkgrel}" "$pkgdir/opt/jc141-bash/wha.sh"
+        install -Dm755 "vulkan.sh-${pkgver}-${pkgrel}" "$pkgdir/opt/jc141-bash/vulkan.sh"
+        install -Dm755 "logo.txt.gz-${pkgver}-${pkgrel}" "$pkgdir/opt/jc141-bash/logo.txt.gz"
 }
