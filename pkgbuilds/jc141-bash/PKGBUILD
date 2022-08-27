@@ -4,7 +4,7 @@
 
 pkgname=('jc141-bash')
 pkgver=1.0
-pkgrel=3
+pkgrel=4
 pkgdesc=""
 url="https://github.com/jc141x/jc141-bash"
 license=('GPL-3')
@@ -16,9 +16,9 @@ source=("wha.sh-${pkgver}-${pkgrel}::https://raw.githubusercontent.com/jc141x/jc
         "logo.txt.gz-${pkgver}-${pkgrel}::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/logo.txt.gz"
 )
 noextract=("logo.txt.gz-${pkgver}-${pkgrel}")
-sha256sums=('c3be4575f4eb48068c88f61c5dc957e617874519f17dd0a757762494e61baf7e'
-            '59987a48771756f8de595a51b6dca8c46137d648563c7656f66f441bb8efdd1d'
-            'a5fa3e8444ee85368bf35f765ced459d71540c4818a116b234ef9644e5ffcbdd')
+sha256sums=('889be244be3f2f06c31de46ad426c6c402e67eeabbe8cbcb64856fcd1ff6e075'
+            '75b3e03d3c03fcf50655817cf546f7cb12aad81404bf3dfa83c8dd57901d29e7'
+            'fb0b634fae08d1773587048bef201b83407ffbce6e792a034570616e3234152a')
 
 package() {
         cd $srcdir
