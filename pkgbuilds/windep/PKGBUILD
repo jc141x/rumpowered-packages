@@ -1,17 +1,17 @@
 # Maintainer: silentnoodle
 pkgname=('windep')
 pkgver="1.0"
-pkgrel=1
+pkgrel=2
 pkgdesc=""
 url="https://github.com/jc141x/WINDEP"
 license=('GPL3')
 arch=('x86_64')
 depends=('jc141-bash')
-source=("base-${pkgver}.tar.lzma::https://github.com/jc141x/WINDEP/releases/download/${pkgver}/base.tar.lzma"
+source=("base-${pkgver}.tar.xz::https://github.com/jc141x/WINDEP/releases/download/${pkgver}/base.tar.lzma"
 )
-noextract=("base-${pkgver}.tar.lzma")
+noextract=("base-${pkgver}.tar.xz")
 sha256sums=('3e0340b922864676e83e5d4b3ad9fd1446d222a6c51ef0b3158357cddeee5a92')
 
 package() {
-        install -Dm644 "base-${pkgver}.tar.lzma" "$pkgdir/opt/jc141-bash/base.tar.lzma"
+        install -Dm644 "base-${pkgver}.tar.xz" "$pkgdir/opt/jc141-bash/base.tar.xz"
 }
