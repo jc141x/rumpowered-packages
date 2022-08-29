@@ -5,7 +5,7 @@
 pkgbase=dxvk-bin
 pkgname=('dxvk-bin')
 _pkgver=1.10.3
-_pkgbuildver=8.14
+_pkgbuildver=8.29
 pkgver="${_pkgver}.${_pkgbuildver}"
 pkgrel=1
 pkgdesc="A Vulkan-based compatibility layer for Direct3D 9/10/11 which allows running 3D applications on Linux using Wine (Windows DLL binary files)"
@@ -19,7 +19,7 @@ depends=('vulkan-icd-loader')
 optdepends=('lib32-vulkan-icd-loader: 32-bit Windows application support')
 source=("dxvk-${pkgver}.tar.gz::https://github.com/jc141x/dxvk/releases/download/v${_pkgver}-${_pkgbuildver}/dxvk-${_pkgver}.tar.gz"
 )
-sha256sums=('3a0496255355ff53e65f1b184fb062fbd70a93bd8f187c45c8d487393698fd49')
+sha256sums=('dc6d45c10497aeb132cfdcb9f75d806185327b1944bd6175657a606f1d4a8999')
 
 package() {
         cd $srcdir

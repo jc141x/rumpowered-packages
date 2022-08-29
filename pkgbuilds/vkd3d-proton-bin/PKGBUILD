@@ -5,7 +5,7 @@
 pkgbase=vkd3d-proton-bin
 pkgname=('vkd3d-proton-bin')
 _pkgver=2.6
-_pkgbuildver=8.10
+_pkgbuildver=8.29
 pkgver="${_pkgver}.${_pkgbuildver}"
 pkgrel=1
 pkgdesc="A Vulkan-based compatibility layer for Direct3D 9/10/11 which allows running 3D applications on Linux using Wine (Windows DLL binary files)"
@@ -20,7 +20,7 @@ optdepends=('lib32-vulkan-icd-loader: 32-bit Windows application support')
 source=("vkd3d-proton-${pkgver}.tar.zst::https://github.com/jc141x/vkd3d-proton/releases/download/v${_pkgver}-${_pkgbuildver}/vkd3d-proton-${_pkgver}.tar.zst"
 )
 noextract=("vkd3d-proton-${pkgver}.tar.zst")
-sha256sums=('5d0ffc590664cba9ee9a4347ca018cb90ad229acf342c5dd1f759be4359687b9')
+sha256sums=('989913fe4b02f98fca00e8ba562f564d48f713881e926e5889d96e5beeb058d6')
 
 prepare() {
         # for unknown reason makepkg would not extract the tar only zst
