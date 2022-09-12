@@ -4,7 +4,7 @@
 
 pkgname=('jc141-bash')
 pkgver=1.0
-pkgrel=9
+pkgrel=10
 pkgdesc=""
 url="https://github.com/jc141x/jc141-bash"
 license=('GPL-3')
@@ -17,7 +17,7 @@ source=("wha.sh-${pkgver}-${pkgrel}::https://raw.githubusercontent.com/jc141x/jc
 )
 noextract=("logo.txt.gz-${pkgver}-${pkgrel}")
 sha256sums=('f4068288548fcc0f201c74f9a36c255d7e420ea81ace83a5c2e2ea445774cfdc'
-            '42138bfd923dee31c2861eeaaf2e3c22d16b5f5584318af189bd74346aa3ebf8'
+            '4bd85b6675c3ff2b90573e168522c7cc2512427387b60fc3f2b3e20b4dc50d57'
             'fb0b634fae08d1773587048bef201b83407ffbce6e792a034570616e3234152a')
 
 package() {
