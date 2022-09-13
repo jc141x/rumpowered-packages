@@ -1,6 +1,6 @@
 # Maintainer: silentnoodle
 pkgname='wine-staging-tkg'
-pkgver=7.15.r5.gb31a964e
+pkgver=7.17.r0.g6d46b1e1
 pkgrel=1
 pkgdesc='wine staging with TkG'
 arch=('x86_64')
@@ -65,9 +65,9 @@ optdepends=(giflib
     schedtool)
 makedepends=()
 source=(
-    "wine-tkg-${pkgver}.tar.xz::https://github.com/jc141x/wine-tkg-git/releases/download/${pkgver}/wine-tkg.tar.lzma"
+    "wine-tkg-${pkgver}.tar.xz::https://github.com/jc141x/wine-tkg-git/releases/download/${pkgver}/wine-tkg.tar.xz"
 )
-sha256sums=('b9e5eb37f8a8f2360d6b8ccec91c615ffc418feab8cb5a8b4a3b440180552e6d')
+sha256sums=('9ae2c2717f8627f73554a9edb52471fdccadfdbe00e46e9d0f00e7d9c3c802a1')
 
 package() {
     install -d $pkgdir/usr/{bin,lib,lib32,share,include}
