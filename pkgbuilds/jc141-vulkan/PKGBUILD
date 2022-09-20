@@ -1,0 +1,18 @@
+# Maintainer: silentnoodle
+pkgname=('jc141-vulkan')
+pkgver=22.09.20
+pkgrel=1
+pkgdesc=""
+url="https://github.com/jc141x/vulkan"
+license=('GPL-3')
+arch=('x86_64')
+depends=('vulkan-icd-loader')
+source=("vulkan-${pkgver}.tar.xz::https://github.com/jc141x/vulkan/releases/download/22.09.20/vulkan.tar.xz"
+)
+
+sha256sums=('a15beea93586030003da134bd7d0cf1ba25d3b73bb9d8048b6a8abe1b5f2a6a2')
+
+package() {
+        cd $srcdir
+        find vulkan -type f -exec install -Dm 755 "{}" "$pkgdir/opt/jc141/{}" \;
+}

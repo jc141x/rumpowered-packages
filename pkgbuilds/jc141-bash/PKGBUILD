@@ -4,7 +4,7 @@
 
 pkgname=('jc141-bash')
 pkgver=1.0
-pkgrel=13
+pkgrel=14
 pkgdesc=""
 url="https://github.com/jc141x/jc141-bash"
 license=('GPL-3')
@@ -22,7 +22,7 @@ sha256sums=('65b742aa87df0ae0ef6ed16d392bb05e70d3fc4eea8b2fba419be121cce26b1c'
 
 package() {
         cd $srcdir
-        install -Dm755 "wha.sh-${pkgver}-${pkgrel}" "$pkgdir/opt/jc141-bash/wha.sh"
-        install -Dm755 "vlk.sh-${pkgver}-${pkgrel}" "$pkgdir/opt/jc141-bash/vlk.sh"
-        install -Dm755 "logo.txt.gz-${pkgver}-${pkgrel}" "$pkgdir/opt/jc141-bash/logo.txt.gz"
+        install -Dm755 "wha.sh-${pkgver}-${pkgrel}" "$pkgdir/opt/jc141/bash/wha.sh"
+        install -Dm755 "vlk.sh-${pkgver}-${pkgrel}" "$pkgdir/opt/jc141/bash/vlk.sh"
+        install -Dm755 "logo.txt.gz-${pkgver}-${pkgrel}" "$pkgdir/opt/jc141/bash/logo.txt.gz"
 }
