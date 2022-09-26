@@ -4,25 +4,22 @@
 
 pkgname=('jc141-bash')
 pkgver=1.0
-pkgrel=15
+pkgrel=16
 pkgdesc=""
 url="https://github.com/jc141x/jc141-bash"
 license=('GPL-3')
 arch=('x86_64')
 conflicts=("rumtricks")
 depends=('vulkan-icd-loader')
-source=("wha.sh-${pkgver}-${pkgrel}::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/wha.sh"
-        "vlk.sh-${pkgver}-${pkgrel}::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/vlk.sh"
+source=("vlk.sh-${pkgver}-${pkgrel}::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/vlk.sh"
         "logo.txt.gz-${pkgver}-${pkgrel}::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/logo.txt.gz"
 )
 noextract=("logo.txt.gz-${pkgver}-${pkgrel}")
-sha256sums=('65b742aa87df0ae0ef6ed16d392bb05e70d3fc4eea8b2fba419be121cce26b1c'
-            '384148b5887816a016dfca32e9e9fe62f94078f5437f28860c72b09746109ab6'
+sha256sums=('384148b5887816a016dfca32e9e9fe62f94078f5437f28860c72b09746109ab6'
             'fb0b634fae08d1773587048bef201b83407ffbce6e792a034570616e3234152a')
 
 package() {
         cd $srcdir
-        install -Dm755 "wha.sh-${pkgver}-${pkgrel}" "$pkgdir/opt/jc141/bash/wha.sh"
         install -Dm755 "vlk.sh-${pkgver}-${pkgrel}" "$pkgdir/opt/jc141/bash/vlk.sh"
         install -Dm755 "logo.txt.gz-${pkgver}-${pkgrel}" "$pkgdir/opt/jc141/bash/logo.txt.gz"
 }
