@@ -1,7 +1,7 @@
 
 pkgname=dwarfs
-pkgver=0.6.1
-pkgrel=2
+pkgver=0.6.2
+pkgrel=1
 pkgdesc="A fast high compression read-only file system"
 url='https://github.com/mhx/dwarfs'
 arch=('x86_64' 'aarch64')
@@ -20,23 +20,13 @@ makedepends=(
 )
 source=(
     "$pkgname-$pkgver.tar.bz2::https://github.com/mhx/dwarfs/releases/download/v$pkgver/dwarfs-$pkgver.tar.bz2"
-    max_queued_bytes.patch
-    out_of_bounds.patch
     )
-cksums=('3387403462'
-        '1471711936'
-        '2146247846')
-sha256sums=('d6968197c6f7b30a946cf77bc94922de78c12e763da42b08c71fdfe87908dc5d'
-            '1b9a5bbd0c54a6a1dd883cf9052ca2cd31b515d5cf3d3bca9f83721e7f327f42'
-            '9e7232cb2ffafe4e332321a03acb3b12f4991937e4f97363605b2d994fd39a16')
-b2sums=('8642a9b204b96f8c05933ded570ec7cbcfeb9f01adb97031251faa22cfe76bc1fe09cac4f1ec5496623dcdebeda2f23a79c7e946ca4371c0f58fe0a427d0a2e1'
-        'dbb0d9fa6e731c17c7eb3462b6ca244374afe7c5c3ddf8e3b2bba036788f65c34baeb3fa568bdde2d638ead677c9a083f3b130b777adf0f6615eb1fc58a078b3'
-        '78bf091485ef945f8f6bce6a9778abd3a02dceb289dcc07eae85bdf75012f33d602a166a940adeec17f7dd3012a330474ffc7846b9977a3f117b36a45e2be137')
+cksums=('1163381221')
+sha256sums=('b411c9c26df4455762c04ecd72ae18fe5a6524572252d8d1e89a9ec9347ed149')
+b2sums=('dbc6d9ff6f6bf4db337633e27d9802ce57742df2e2c3497e1d92f3d20101044741e5797f1264f5dfc5228cc3c430076f9e0e02b0632d39467f22e0a2a3a8e640')
 
 prepare() {
   cd "$pkgname-$pkgver"
-  patch -p1 -i "$srcdir/max_queued_bytes.patch"
-  patch -p1 -i "$srcdir/out_of_bounds.patch"
 }
 
 build() {
