@@ -1,3 +1,6 @@
 pkgbuilds/**
 !pkgbuilds/**/
 !pkgbuilds/**/PKGBUILD
+chroot
+pacman.conf
+makepkg.conf
