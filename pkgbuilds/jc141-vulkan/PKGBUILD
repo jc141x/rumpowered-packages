@@ -1,6 +1,6 @@
 # Maintainer: silentnoodle
 pkgname=('jc141-vulkan')
-pkgver=22.11.09
+pkgver=22.11.11
 pkgrel=1
 pkgdesc=""
 url="https://github.com/jc141x/vulkan"
