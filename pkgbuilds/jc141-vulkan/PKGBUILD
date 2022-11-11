@@ -1,7 +1,7 @@
 # Maintainer: silentnoodle
 pkgname=('jc141-vulkan')
 pkgver=22.11.11
-pkgrel=1
+pkgrel=2
 pkgdesc=""
 url="https://github.com/jc141x/vulkan"
 license=('GPL-3')
@@ -15,4 +15,6 @@ sha256sums=('a15beea93586030003da134bd7d0cf1ba25d3b73bb9d8048b6a8abe1b5f2a6a2')
 package() {
         cd $srcdir
         find vulkan -type f -exec install -Dm 755 "{}" "$pkgdir/opt/jc141/{}" \;
+        install -Dd "$pkgdir/usr/bin"
+        ln -s /opt/jc141/vulkan/setup-vulkan.sh "$pkgdir/usr/bin/vlk-jc141"
 }
