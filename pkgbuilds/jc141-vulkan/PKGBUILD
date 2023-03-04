@@ -1,16 +1,16 @@
 # Maintainer: silentnoodle
 pkgname=('jc141-vulkan')
-pkgver=23.02.06
+pkgver=23.03.04
 pkgrel=1
 pkgdesc=""
 url="https://github.com/jc141x/vulkan"
 license=('GPL-3')
 arch=('x86_64')
 depends=('vulkan-icd-loader')
-source=("vulkan-${pkgver}.tar.xz::https://github.com/jc141x/vulkan/releases/download/22.09.20/vulkan.tar.xz"
+source=("vulkan-${pkgver}.tar.xz::https://github.com/jc141x/vulkan/releases/download/${pkgver}/vulkan.tar.xz"
 )
 
-sha256sums=('a15beea93586030003da134bd7d0cf1ba25d3b73bb9d8048b6a8abe1b5f2a6a2')
+sha256sums=('be7ad4ddfe2bcb93274eae63c244c06e64a23d2c935e98d4f07362cdf755daa3')
 
 package() {
         cd $srcdir
