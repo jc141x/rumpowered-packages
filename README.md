@@ -3,7 +3,7 @@
 add this to your pacman config
 ```toml
 [rumpowered]
-Server = https://repo.rumpowered.org/$arch
+Server = https://jc141x.github.io/rumpowered-packages/$arch
 ```
 
 ## GPG Key
