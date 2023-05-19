@@ -1,0 +1,12 @@
+pkgbase = windep
+	pkgver = 1.0
+	pkgrel = 2
+	url = https://github.com/jc141x/WINDEP
+	arch = x86_64
+	license = GPL3
+	depends = jc141-bash
+	noextract = base-1.0.tar.xz
+	source = base-1.0.tar.xz::https://github.com/jc141x/WINDEP/releases/download/1.0/base.tar.lzma
+	sha256sums = 3e0340b922864676e83e5d4b3ad9fd1446d222a6c51ef0b3158357cddeee5a92
+
+pkgname = windep

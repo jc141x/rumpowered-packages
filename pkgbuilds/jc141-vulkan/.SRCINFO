@@ -1,0 +1,11 @@
+pkgbase = jc141-vulkan
+	pkgver = 23.04.01
+	pkgrel = 1
+	url = https://github.com/jc141x/vulkan
+	arch = x86_64
+	license = GPL-3
+	depends = vulkan-icd-loader
+	source = vulkan-23.04.01.tar.xz::https://github.com/jc141x/vulkan/releases/download/23.04.01/vulkan.tar.xz
+	sha256sums = 072cb1eae4e8e0a9d2d418285e963be163bd484891f06ea1a21d47017987afb5
+
+pkgname = jc141-vulkan

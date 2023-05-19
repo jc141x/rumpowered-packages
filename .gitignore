@@ -1,6 +1,7 @@
 pkgbuilds/**
 !pkgbuilds/**/
 !pkgbuilds/**/PKGBUILD
+!pkgbuilds/**/.SRCINFO
 chroot
 pacman.conf
 makepkg.conf
