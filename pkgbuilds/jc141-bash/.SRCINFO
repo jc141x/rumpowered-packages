@@ -1,0 +1,15 @@
+pkgbase = jc141-bash
+	pkgver = 1.0
+	pkgrel = 16
+	url = https://github.com/jc141x/jc141-bash
+	arch = x86_64
+	license = GPL-3
+	depends = vulkan-icd-loader
+	conflicts = rumtricks
+	noextract = logo.txt.gz-1.0-16
+	source = vlk.sh-1.0-16::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/vlk.sh
+	source = logo.txt.gz-1.0-16::https://raw.githubusercontent.com/jc141x/jc141-bash/master/root-scripts/files/logo.txt.gz
+	sha256sums = 384148b5887816a016dfca32e9e9fe62f94078f5437f28860c72b09746109ab6
+	sha256sums = fb0b634fae08d1773587048bef201b83407ffbce6e792a034570616e3234152a
+
+pkgname = jc141-bash
