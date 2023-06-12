@@ -5,4 +5,4 @@ pkgbuilds/**
 chroot
 pacman.conf
 makepkg.conf
-*.old
+*.old*
