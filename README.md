@@ -15,7 +15,7 @@ keyid: [cc7a2968b28a04b3](https://keyserver.ubuntu.com/pks/lookup?op=vindex&fing
 
 ```
 sudo pacman-key --recv-keys cc7a2968b28a04b3
-sudo pacman-key --lsing-key cc7a2968b28a04b3
+sudo pacman-key --lsign-key cc7a2968b28a04b3
 ```
 </details>
 
