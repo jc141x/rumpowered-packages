@@ -1,23 +1,30 @@
 pkgname=dwarfs
-pkgver=0.7.5
+pkgver=0.8.0
 pkgrel=1
 pkgdesc="A fast high compression read-only file system"
 url='https://github.com/mhx/dwarfs'
 arch=('x86_64' 'aarch64')
 license=('GPL3')
 depends=(
-  'fuse3' 'openssl' 'boost-libs' 'jemalloc' 'xxhash'
-  'lz4' 'xz' 'zstd' 'libarchive' 'brotli'
-  'libunwind' 'google-glog' 'fmt' 'gflags' 'double-conversion'
+  'acl' 'libarchive' 'boost-libs'
+  'brotli' 'bzip2' 'openssl'
+  'glibc' 'double-conversion' 'expat'
+  'flac' 'fmt' 'fuse3'
+  'gcc-libs' 'gflags' 'google-glog'
+  'jemalloc' 'lz4' 'xz'
+  'glibc' 'libogg' 'glibc'
+  'gcc-libs' 'libunwind' 'xxhash'
+  'zlib' 'zstd'
 )
 makedepends=(
   'git' 'cmake' 'ruby-ronn'
-  'boost' 'libevent' 'libdwarf' 'utf8cpp'
+  'boost' 'libevent' 'libdwarf'
+  'utf8cpp' 'chrono-date'
 )
 source=("$pkgname-$pkgver.tar.xz::https://github.com/mhx/dwarfs/releases/download/v$pkgver/dwarfs-$pkgver.tar.xz")
-cksums=('1019021317')
-sha256sums=('31fabc3a3a8233e247f77149a7c702b79c4105dc814459fef85d4c4747a2b4f0')
-b2sums=('c40d3fd74d750a3da2073ac75a9ddc6c0bf11e9aeb1c7718f0181b33820e6d5ca09ba25be7d6b7224036e02665115f4d43378b5dfe0975a4eea83eb866cfab01')
+cksums=('1524624578')
+sha256sums=('d5026453cd4ed11be5323f564d59cd9a155dfdcea3ddb81359f33e1c28824cf3')
+b2sums=('17a0be32cc6e77a90fd391274a12492ab57fdf7f36bb1f9815e3ea09d952e13ec64cfb09a1e4cee3169a5276fd9be250c1e01c5d3af2160924ea3f900aed0a32')
 
 prepare() {
   cd "$pkgname-$pkgver"
@@ -27,11 +34,18 @@ build() {
   cmake -B build -S "$pkgname-$pkgver" \
     -D CMAKE_INSTALL_PREFIX=/usr \
     -D CMAKE_BUILD_TYPE=None \
+    -D WITH_MAN_OPTION=OFF \
     -D PREFER_SYSTEM_ZSTD=ON \
     -D PREFER_SYSTEM_XXHASH=ON \
-    -D PREFER_SYSTEM_LIBFMT=ON
+    -D PREFER_SYSTEM_LIBFMT=ON \
+    -D PREFER_SYSTEM_GTEST=ON \
+    -D CMAKE_CXX_FLAGS=-w
 
-  cmake --build build
+  cmake --build build -j$(nproc)
+}
+
+check() {
+  make test
 }
 
 package() {
