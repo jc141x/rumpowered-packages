@@ -1,5 +1,5 @@
 pkgname=dwarfs
-pkgver=0.8.0
+pkgver=0.9.1
 pkgrel=1
 pkgdesc="A fast high compression read-only file system"
 url='https://github.com/mhx/dwarfs'
@@ -19,12 +19,12 @@ depends=(
 makedepends=(
   'git' 'cmake' 'ruby-ronn'
   'boost' 'libevent' 'libdwarf'
-  'utf8cpp' 'chrono-date'
+  'utf8cpp' 'chrono-date' 'range-v3'
 )
 source=("$pkgname-$pkgver.tar.xz::https://github.com/mhx/dwarfs/releases/download/v$pkgver/dwarfs-$pkgver.tar.xz")
-cksums=('1524624578')
-sha256sums=('d5026453cd4ed11be5323f564d59cd9a155dfdcea3ddb81359f33e1c28824cf3')
-b2sums=('17a0be32cc6e77a90fd391274a12492ab57fdf7f36bb1f9815e3ea09d952e13ec64cfb09a1e4cee3169a5276fd9be250c1e01c5d3af2160924ea3f900aed0a32')
+cksums=('3364448318')
+sha256sums=('9d0c311d37bb1451611731815be92302c596884522a5a1a29b53dacc77a1de12')
+b2sums=('173557540ed62fc6f59a1caf29fd30945ed32b0cbfca4b2a9613c9490d73f52d38c4c2e0ed83a55fcedefea051858d397c5e36689b9eb01e49c9785bd14bdda1')
 
 prepare() {
   cd "$pkgname-$pkgver"
