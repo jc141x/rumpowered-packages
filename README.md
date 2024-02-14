@@ -21,7 +21,32 @@ sudo pacman-key --lsign-key cc7a2968b28a04b3
 
 ## todo
 
-- automatically sync to server
 - automatically update packages that are on AUR
 - write documentation for maintainers
 - ???
+
+---
+
+## How to update dwarfs
+
+```sh
+cd pkgbuilds/dwarfs
+## update the version in the PKGBUILD with your favorite text editor
+updpkgsums
+makepkg --printsrcinfo > .SRCINFO
+makechrootpkg -cur $CHROOT -- --nosign
+mv dwarfs-<VERSION>-<RELEASE>-x86_64.pkg.tar.zst ../../x86_64/
+cd ../..
+repo-add -s -R x86_64/rumpowered.db.tar.gz x86_64/dwarfs-<VERSION>-<RELEASE>-x86_64.pkg.tar.zst
+gpg --detach-sign x86_64/dwarfs-<VERSION>-<RELEASE>-x86_64.pkg.tar.zst
+## add, commit, push
+```
+
+explaination:
+- `makechrootpkg -cur $CHROOT -- --nosign`:
+    - `-cur`: **c**lean, **u**pdate, **r**oot
+    - `$CHROOT`: points to a chroot created with `mkarchroot` (see [here](https://wiki.archlinux.org/title/DeveloperWiki:Building_in_a_clean_chroot#Classic_way))
+    - `-- --nosign`: pass `--nosign` to `makepkg` to because the signing key is not available in the chroot
+- `repo-add -s -R x86_64/rumpowered.db.tar.gz x86_64/dwarfs-<VERSION>-<RELEASE>-x86_64.pkg.tar.zst`:
+    - `-s`: sign the database
+    - `-R`: remove old versions of the package from the database
