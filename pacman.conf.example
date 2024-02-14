@@ -1,0 +1,22 @@
+[options]
+HoldPkg     = pacman glibc
+Architecture = auto
+Color
+CheckSpace
+ParallelDownloads = 5
+SigLevel    = Never
+LocalFileSigLevel = Optional
+
+[core]
+Include = /etc/pacman.d/mirrorlist
+
+[extra]
+Include = /etc/pacman.d/mirrorlist
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+
+[rumpowered]
+SigLevel = Never
+## EDIT THIS LINE
+Server = file:///home/......./rumpowered-packages/$arch
