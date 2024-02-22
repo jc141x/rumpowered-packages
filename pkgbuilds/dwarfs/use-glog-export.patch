@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ff86d0e..917ba1f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -323,7 +323,7 @@ set(THRIFT_COMPILER_ONLY
+ add_compile_definitions(FOLLY_CFG_NO_COROUTINES)
+ 
+ add_compile_definitions(GLOG_NO_ABBREVIATED_SEVERITIES NOMINMAX NOGDI)
+-
++add_compile_definitions(GLOG_USE_GLOG_EXPORT)
+ set(
+   CXX_STD "gnu++20"
+   CACHE STRING
