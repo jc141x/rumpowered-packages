@@ -1,6 +1,6 @@
 pkgname=dwarfs
-pkgver=0.9.5
-pkgrel=2
+pkgver=0.9.6
+pkgrel=1
 pkgdesc="A fast high compression read-only file system"
 url='https://github.com/mhx/dwarfs'
 arch=('x86_64' 'aarch64')
@@ -21,19 +21,13 @@ makedepends=(
   'boost' 'libevent' 'libdwarf'
   'utf8cpp' 'chrono-date' 'range-v3'
 )
-source=("$pkgname-$pkgver.tar.xz::https://github.com/mhx/dwarfs/releases/download/v$pkgver/dwarfs-$pkgver.tar.xz"
-  "use-glog-export.patch"
-)
-cksums=('457304706'
-        '1756901301')
-sha256sums=('6f578af60bc5696fb51bde22de1a47513cf8befc5944cb561003beb8f4612a32'
-            'e8ecfe51c28afd92939b2ae86dd394371534ba2348c469270db72ee90c932473')
-b2sums=('90c0c35f28773f3af6399ca3c3aabaf366770315197adc9c4168bf37f7c88fdbc4c3c93e647132f6a36812b1bf9d27636736682376f9b821086f8793b05feed9'
-        'c6da8931a1f0f776f6fa33aab14fae2fa5aed5af3727fcc8130f5479b9642f7c19605601413013d8cf04e9780fb78a4c7074b5170c5e42e7949658f483bf7664')
+source=("$pkgname-$pkgver.tar.xz::https://github.com/mhx/dwarfs/releases/download/v$pkgver/dwarfs-$pkgver.tar.xz")
+cksums=('2563943164')
+sha256sums=('62568927b086b26abe8e812cc7484f9686b509fec83248619ec60b5e4cfa752e')
+b2sums=('305587de0e31390f4d3c2701cc1b0fe9f29d2a37a363f575ae770c0037d69b77685bd593f900c71e4e9fe8dbfdf4644f1ea3158f9fdc3596583eda89d0040e88')
 
 prepare() {
   cd "$pkgname-$pkgver"
-  patch -Np1 -i "$srcdir/use-glog-export.patch"
 }
 
 build() {
