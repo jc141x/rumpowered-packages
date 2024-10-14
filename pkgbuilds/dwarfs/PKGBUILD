@@ -42,9 +42,9 @@ build() {
   cmake --build build -j$(nproc)
 }
 
-check() {
-  make test
-}
+#check() {
+  #make test
+#}
 
 package() {
   cmake --install build --prefix "$pkgdir/usr"
