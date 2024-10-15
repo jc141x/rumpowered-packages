@@ -27,7 +27,9 @@ sudo pacman-key --lsign-key cc7a2968b28a04b3
 
 ---
 
-## How to update dwarfs
+## Some info for maintainers
+
+### How to update dwarfs
 
 ```sh
 cd pkgbuilds/dwarfs
