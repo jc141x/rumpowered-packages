@@ -1,1 +1,1 @@
-rumpowered.files.tar.zst.sig
+rumpowered.files.tar.gz.sig

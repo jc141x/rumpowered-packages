@@ -1,1 +1,1 @@
-rumpowered.db.tar.zst.sig
+rumpowered.db.tar.gz.sig
