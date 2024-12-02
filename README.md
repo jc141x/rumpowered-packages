@@ -39,7 +39,7 @@ makepkg --printsrcinfo > .SRCINFO
 makechrootpkg -cur $CHROOT -- --nosign
 mv dwarfs-<VERSION>-<RELEASE>-x86_64.pkg.tar.zst ../../x86_64/
 cd ../..
-repo-add -s -R x86_64/rumpowered.db.tar.gz x86_64/dwarfs-<VERSION>-<RELEASE>-x86_64.pkg.tar.zst
+repo-add -s -R x86_64/rumpowered.db.tar.zst x86_64/dwarfs-<VERSION>-<RELEASE>-x86_64.pkg.tar.zst
 gpg --detach-sign x86_64/dwarfs-<VERSION>-<RELEASE>-x86_64.pkg.tar.zst
 ## add, commit, push
 ```
