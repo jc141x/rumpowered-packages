@@ -1,6 +1,6 @@
 pkgname=dwarfs
-pkgver=0.10.2
-pkgrel=3
+pkgver=0.11.1
+pkgrel=1
 pkgdesc="A fast high compression read-only file system"
 url='https://github.com/mhx/dwarfs'
 arch=('x86_64' 'aarch64')
@@ -18,9 +18,9 @@ makedepends=(
 )
 source=("$pkgname-$pkgver.tar.xz::https://github.com/mhx/dwarfs/releases/download/v$pkgver/dwarfs-$pkgver.tar.xz"
 )
-cksums=('871916692')
-sha256sums=('36767290a39f92782e41daaa3eb45e39550ad1a4294a6d8365bc0f456f75f00c')
-b2sums=('3d846f04b469ed1ff810ff36d337ddb8cf31f307ddf2b8b0de24703db75b2a2597e5c91c930f3e359b277b345c4f25e87fefa93e4269f3c20b32b5bd28a2948c')
+cksums=('3695390944')
+sha256sums=('7a0cccb1ec3c2a18e9a014893c1d3e1f8f2c44ade6936c9f6d3bab5ec14b2052')
+b2sums=('5e6d9a002043f5c90ea1191779efef6675eebe426ac37074938cff916871155772d5c0fc9c195b8953ecd78be57dd05f32f9805ce1f41c7b41feaa25cfe7cdaf')
 
 prepare() {
   cd "$pkgname-$pkgver"
