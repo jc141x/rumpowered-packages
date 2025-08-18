@@ -22,3 +22,4 @@ gh api \
   > wine-tkg.zip
 
 unzip wine-tkg.zip
+rm wine-tkg.zip
