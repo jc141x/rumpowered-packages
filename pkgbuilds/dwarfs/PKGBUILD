@@ -1,6 +1,6 @@
 pkgname=dwarfs
-pkgver=0.14.0
-pkgrel=1
+pkgver=0.13.0
+pkgrel=3
 pkgdesc="A fast high compression read-only file system"
 url='https://github.com/mhx/dwarfs'
 arch=('x86_64')
@@ -19,16 +19,16 @@ makedepends=(
 source=("$pkgname-$pkgver.tar.xz::https://github.com/mhx/dwarfs/releases/download/v$pkgver/dwarfs-$pkgver.tar.xz"
 "boost-system.patch"
 )
-cksums=('3695517307'
-        '1216288171')
-sha256sums=('514b851af356102abca9103dd12c92a31fad6d2f705c4cfaff4e815b5753250f'
-            '6b177a988b65a5c544ad90e4d1861bee1353a63fe368a7d8c956011625292b1a')
-b2sums=('84dcbb80ca8bd779b238dd9f91963a543b8608e308d93cbb58b0ff64c51f50abef0ee42e520af20741aab7363ef2e144c0f8512bbfe38e4445ebbb4599782e11'
-        'f401f94cb04a64120080d915733313fff72ffe1be6bdbe8cbb8ee33dc8c21f75ff60183176b1e5f06c92cdc9f8d656100fdba59b465aecd35f4e232b3b8d99b5')
+cksums=('2828036738'
+        '1176073376')
+sha256sums=('d0654fcc1219bfd11c96f737011d141c3ae5929620cd22928e49f25c37a15dc9'
+            '16cda56849988cb5ab43e9f23e6d7cbffd3b7a33cfc9f5820a93ae0032ab1339')
+b2sums=('19cf0b68ffb016907cac88521ff5390f1ef637e978e4c9c5a32bf99fb9f7f9e4214b5b74c49dcd4b1fd1f3a7057b0bc9d1f821e871c4870cee0b41c186e5143e'
+        'fdc540abaf3e6170c0c94a0cdedf73a2f8e4c96f00ac1bb8a6eabfbb879ec72bdfe287373be5c72a4412e99a4858633301011e5d0f6b5b5dc40350a80d0c1638')
 
 prepare() {
   cd "$pkgname-$pkgver"
-
+  patch -Np2 -i ../boost-system.patch
 }
 
 build() {

@@ -1,0 +1,28 @@
+diff -ura src.orig/dwarfs-0.13.0/cmake/dwarfs-config.cmake.in src.new/dwarfs-0.13.0/cmake/dwarfs-config.cmake.in
+--- src.orig/dwarfs-0.13.0/cmake/dwarfs-config.cmake.in	2025-10-22 22:00:32.317865761 +0300
++++ src.new/dwarfs-0.13.0/cmake/dwarfs-config.cmake.in	2025-10-22 22:00:56.765779091 +0300
+@@ -22,8 +22,8 @@
+ find_dependency(fmt CONFIG REQUIRED)
+ find_dependency(gflags CONFIG REQUIRED)
+ find_dependency(Boost @BOOST_REQUIRED_VERSION@ REQUIRED CONFIG
+-                COMPONENTS chrono context filesystem iostreams program_options regex system thread
+-                OPTIONAL_COMPONENTS process)
++                COMPONENTS chrono context filesystem iostreams program_options regex thread
++                OPTIONAL_COMPONENTS process system)
+ pkg_check_modules(LIBCRYPTO REQUIRED IMPORTED_TARGET libcrypto>=@LIBCRYPTO_REQUIRED_VERSION@)
+ pkg_check_modules(LIBARCHIVE REQUIRED IMPORTED_TARGET libarchive>=@LIBARCHIVE_REQUIRED_VERSION@)
+ pkg_check_modules(XXHASH REQUIRED IMPORTED_TARGET libxxhash>=@XXHASH_REQUIRED_VERSION@)
+diff -ura src.orig/dwarfs-0.13.0/folly/CMake/folly-deps.cmake src.new/dwarfs-0.13.0/folly/CMake/folly-deps.cmake
+--- src.orig/dwarfs-0.13.0/folly/CMake/folly-deps.cmake	2025-10-22 22:00:32.849568952 +0300
++++ src.new/dwarfs-0.13.0/folly/CMake/folly-deps.cmake	2025-10-22 22:01:22.253579186 +0300
+@@ -41,8 +41,9 @@
+     filesystem
+     program_options
+     regex
+-    system
+     thread
++  OPTIONAL_COMPONENTS
++    system
+   REQUIRED
+ )
+ list(APPEND FOLLY_LINK_LIBRARIES ${Boost_LIBRARIES})
